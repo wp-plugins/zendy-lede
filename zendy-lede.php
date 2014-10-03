@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Zendy Lede
-Version: 0.9
+Version: 0.9.1
 Plugin URI: https://hq.zendy.net/wordpress/plugins/lede/
 Author: Zendy Labs
 Author URI: https://hq.zendy.net/
@@ -409,4 +409,61 @@ if ( !function_exists( 'zendy_lede_get_lede_html' ) ){
 		// Adding "die()" here prevents wp_ajax from returning an extra 0 character
 		die();
 	}
+}
+
+
+// Plugin page links
+// Row meta links (links under description of plugin)
+// Add action links on plugin page in to Plugin Description block
+// Add row meta links on plugin page (links under plugin description)
+add_filter( 'plugin_row_meta', 'zendy_lede_register_plugin_row_meta_links', 10, 2 );
+
+if ( ! function_exists ( 'zendy_lede_register_plugin_row_meta_links' ) ) {
+	
+	// Add row meta links (links under description of plugin)
+	// Gets hooked on plugin_row_meta
+	function zendy_lede_register_plugin_row_meta_links( $links, $file ) {
+		
+		// If our plugin name is in the file name, let's do stuff
+		if ( strpos( $file, 'zendy-lede.php' ) !== false ) {
+		
+			// Add all new links into an array
+			$new_links = array(	
+				'<a href="https://hq.zendy.net/wordpress/plugins/" target="_blank">More plugins by Zendy Labs</a>',
+				'<a href="https://hq.zendy.net/wordpress/plugins/lede/donate/" target="_blank">Donate</a>'
+			);
+		
+			// Merge new links into main row meta links array
+			$links = array_merge( $links, $new_links );
+		}
+	
+		return $links;	      
+	
+	}
+
+}
+
+// Add action links on plugin page (links under plugin name)
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'zendy_lede_register_plugin_action_links' );
+
+// Plugin page links
+// Action links (links under name of plugin)
+if ( ! function_exists ( 'zendy_lede_register_plugin_action_links' ) ) {
+
+	// Function to add action links (links under name of plugin)
+	// Gets hooked on plugin_action_links_
+	function zendy_lede_register_plugin_action_links( $links ) {
+	
+		// Add all new links into an array
+		$new_links = array(
+			'<a href="'. get_admin_url(null, 'options-general.php?page=zendy_lede') .'">Settings</a>'
+		);
+
+		// Merge new links into main action links array
+		$links = array_merge( $links, $new_links );
+		
+		return $links;
+	
+	}
+
 }
