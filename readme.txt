@@ -42,6 +42,12 @@ No. At this point, Zendy Lede is 100% HTML5. We plan on adding Flash fallback su
 
 == Changelog ==
 
+= 0.9.4 =
+* Meta: Improved settings page styling for readability
+
+= 0.9.3 =
+* Meta: Tested for WordPress 4.1
+
 = 0.9.2 =
 * Fix: added max-width for image heading
 

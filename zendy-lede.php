@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Zendy Lede
-Version: 0.9.2
+Version: 0.9.4
 Plugin URI: https://hq.zendy.net/wordpress/plugins/lede/
 Author: Zendy Labs
 Author URI: https://hq.zendy.net/
@@ -192,6 +192,12 @@ if ( !function_exists( 'zendy_lede_text_field_media_mp4_url_render' ) ){
 		$options = get_option( 'zendy_lede_settings' );
 		?>
 		<input size="70" type='text' name='zendy_lede_settings[zendy_lede_text_field_media_mp4_url]' value='<?php echo $options['zendy_lede_text_field_media_mp4_url'] ? $options['zendy_lede_text_field_media_mp4_url'] : 'http://example.com/my-video.mp4'; ?>'>
+		<p>
+			If you need a sample video to test this plugin you can use the following URL for the MP4 format:<br>
+		</p>
+		<p>
+			<code>http://cdn.zendy.net/videos/zendy-lede-placeholder-video.mp4</code>
+		</p>
 		<?php
 	}
 }
@@ -202,6 +208,12 @@ if ( !function_exists( 'zendy_lede_text_field_media_ogg_url_render' ) ){
 		$options = get_option( 'zendy_lede_settings' );
 		?>
 		<input size="70" type='text' name='zendy_lede_settings[zendy_lede_text_field_media_ogg_url]' value='<?php echo $options['zendy_lede_text_field_media_ogg_url'] ? $options['zendy_lede_text_field_media_ogg_url'] : 'http://example.com/my-video.ogv'; ?>'>
+		<p>
+			If you need a sample video to test this plugin you can use the following URL for the OGG format:<br>
+		</p>
+		<p>
+			<code>http://cdn.zendy.net/videos/zendy-lede-placeholder-video.ogv</code>
+		</p>
 		<?php
 	}
 }
@@ -212,6 +224,12 @@ if ( !function_exists( 'zendy_lede_text_field_media_webm_url_render' ) ){
 		$options = get_option( 'zendy_lede_settings' );
 		?>
 		<input size="70" type='text' name='zendy_lede_settings[zendy_lede_text_field_media_webm_url]' value='<?php echo $options['zendy_lede_text_field_media_webm_url'] ? $options['zendy_lede_text_field_media_webm_url'] : 'http://example.com/my-video.webm'; ?>'>
+		<p>
+			If you need a sample video to test this plugin you can use the following URL for the WEBM format:<br>
+		</p>
+		<p>	
+			<code>http://cdn.zendy.net/videos/zendy-lede-placeholder-video.webm</code>
+		</p>
 		<?php
 	}
 }

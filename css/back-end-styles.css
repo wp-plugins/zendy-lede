@@ -95,3 +95,8 @@ h1.zendy-lede-title, h3.zendy-lede-title{
 		padding-left: 30px;
 	}
 }
+code{
+	background: #ccc;
+	border-radius: 2px;
+	padding: 4px;
+}
