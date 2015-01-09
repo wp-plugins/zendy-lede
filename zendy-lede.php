@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Zendy Lede
-Version: 0.9.6
+Version: 1.0
 Plugin URI: https://hq.zendy.net/wordpress/plugins/lede/
 Author: Zendy Labs
 Author URI: https://hq.zendy.net/
@@ -38,6 +38,10 @@ if ( !function_exists ( 'zendy_lede_styles' ) ){
 if ( !function_exists ( 'zendy_lede_scripts' ) ){
 	function zendy_lede_scripts(){
 		wp_register_script( 'zendy_lede_scripts', plugins_url( 'js/scripts.js', __FILE__ ), array( 'jquery' ), false, true );
+		$params = array(
+	        'wp_admin_ajax_url'  => admin_url("admin-ajax.php"),
+	    );
+		wp_localize_script( 'zendy_lede_scripts', 'frontEndParams', $params );
 		wp_enqueue_script( 'zendy_lede_scripts' );
 	}
 }
@@ -384,10 +388,14 @@ if ( !function_exists( 'zendy_lede_options_page' ) ){
  * =======================
  */
 
-add_action("wp_ajax_zendy_lede_get_lede_html", "zendy_lede_get_lede_html");
+add_action( 'wp_ajax_zendy_lede_get_lede_html', 'zendy_lede_get_lede_html_callback' );
+add_action( 'wp_ajax_nopriv_zendy_lede_get_lede_html', 'zendy_lede_get_lede_html_callback' );
 
-if ( !function_exists( 'zendy_lede_get_lede_html' ) ){
-	function zendy_lede_get_lede_html(){
+//add_action("wp_ajax_zendy_lede_get_lede_html", "zendy_lede_get_lede_html");
+//add_action("wp_ajax_nopriv_zendy_lede_get_lede_html", "zendy_lede_get_lede_html");
+
+if ( !function_exists( 'zendy_lede_get_lede_html_callback' ) ){
+	function zendy_lede_get_lede_html_callback(){
 		$options = get_option( 'zendy_lede_settings' );
 		?>
 		
@@ -424,8 +432,9 @@ if ( !function_exists( 'zendy_lede_get_lede_html' ) ){
 		<!-- THIS IS USED FOR STYLING AND TO AUTO-SCROLL TO CONTENT -->
 		<div id="zendy-lede-bottom-border"></div>
 		<?
-		// Adding "die()" here prevents wp_ajax from returning an extra 0 character
-		die();
+		// Adding "exit()" here prevents wp_ajax from returning an extra 0 character
+		die('!!!');
+		exit();
 	}
 }
 
