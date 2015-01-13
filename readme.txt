@@ -4,7 +4,7 @@ Donate link: http://hq.zendy.net/wordpress/plugins/lede/donate/
 Tags: video, background, splash, fullscreen
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,9 +42,11 @@ No. At this point, Zendy Lede is 100% HTML5. We plan on adding Flash fallback su
 
 == Changelog ==
 
+= 1.1.2 =
+* Fix: Changed text-shadow to make text overlay easier to read.
+
 = 1.1.1 =
 * Fix: Removed dark overlay; text might be harder to read, but video is playable on iOS.
-
 
 = 1.1 =
 * Feature: Added option to not display heading text or image
