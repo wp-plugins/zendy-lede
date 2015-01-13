@@ -42,6 +42,9 @@ No. At this point, Zendy Lede is 100% HTML5. We plan on adding Flash fallback su
 
 == Changelog ==
 
+= 1.1.3 =
+* Fix: Added click event to allow video play on iOS
+
 = 1.1.2 =
 * Fix: Changed text-shadow to make text overlay easier to read.
 

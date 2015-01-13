@@ -26,9 +26,8 @@ VIDEO
 	top: 0;
 	left: 0;
 	width: 100%;
-	background: rgba(0,0,0,0.5);
+	background: rgba(0,0,0,0.2);
 	z-index: 200;
-	display: none;
 }
 
 #zendy-lede-text-wrapper{

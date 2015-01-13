@@ -88,6 +88,9 @@ jQuery( document ).ready(function(){
 
 				jQuery('body.home').prepend( ledeHTML );
 				setDimensions();
+				jQuery('#zendy-lede-text-wrapper').click(function(){
+					jQuery('#zendy-lede-video').get(0).play();
+				});
 				jQuery('#zendy-lede-video').on('loadstart', function(evt){
 
 					jQuery('body.home').fadeIn(500);
