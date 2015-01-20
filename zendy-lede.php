@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Zendy Lede
-Version: 1.1.3
+Version: 1.1.4
 Plugin URI: https://hq.zendy.net/wordpress/plugins/lede/
 Author: Zendy Labs
 Author URI: https://hq.zendy.net/
@@ -442,6 +442,15 @@ if ( !function_exists( 'zendy_lede_get_lede_html_callback' ) ){
 	}
 }
 
+add_action( 'wp_ajax_zendy_lede_get_frontpage_path', 'zendy_lede_get_frontpage_path_callback' );
+add_action( 'wp_ajax_nopriv_zendy_lede_get_frontpage_path', 'zendy_lede_get_frontpage_path_callback' );
+
+if ( !function_exists( 'zendy_lede_get_frontpage_path_callback' ) ){
+	function zendy_lede_get_frontpage_path_callback(){
+		echo get_bloginfo( 'url' ) . '/';
+		exit();
+	}
+}
 
 // Plugin page links
 // Row meta links (links under description of plugin)
