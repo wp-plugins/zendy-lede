@@ -1,10 +1,9 @@
 === Zendy Lede ===
 Contributors: ZendyLabs
-Donate link: http://hq.zendy.net/wordpress/plugins/lede/donate/
 Tags: video, background, splash, fullscreen
 Requires at least: 4.0
 Tested up to: 4.1
-Stable tag: 1.1.5
+Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +40,12 @@ No. At this point, Zendy Lede is 100% HTML5. We plan on adding Flash fallback su
 3. The settings page
 
 == Changelog ==
+
+= 1.1.7 =
+* Meta: author name now is Zendy Web Studio
+
+= 1.1.6 =
+* Meta: updated links to new Zendy Web Studio website
 
 = 1.1.5 =
 * Meta: added comment to jQuery.post section of scripts.js and removed console.log()

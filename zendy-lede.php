@@ -1,10 +1,10 @@
 <?php
 /*
 Plugin Name: Zendy Lede
-Version: 1.1.5
-Plugin URI: https://hq.zendy.net/wordpress/plugins/lede/
-Author: Zendy Labs
-Author URI: https://hq.zendy.net/
+Version: 1.1.7
+Plugin URI: https://kauai.zendy.net/wordpress/plugins/zendy-lede/
+Author: Zendy Web Studio
+Author URI: https://kauai.zendy.net/
 Description: Add a high-impact opening statement with full-screen video background on your homepage
 TODO: internationalize
 */
